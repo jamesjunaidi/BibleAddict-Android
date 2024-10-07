@@ -10,6 +10,11 @@ This Object controls styles across the app.
 object Styles {
     val textStyle = TextStyle(
         fontWeight = FontWeight.Bold,
-        fontSize = 16.sp,
+        fontSize = 24.sp
+    )
+
+    val welcomeTextStyle = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 30.sp
     )
 }
