@@ -3,18 +3,31 @@ package com.junaidi.qtdays
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.Checkbox
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.junaidi.qtdays.ui.theme.BibleAddictTheme
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import com.junaidi.qtdays.Models.Profile
+import com.junaidi.qtdays.maincomposables.Heading
+import com.junaidi.qtdays.maincomposables.SingleCheckbox
+import com.junaidi.qtdays.maincomposables.WeeklyCheckboxes
+import java.util.Calendar
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             BibleAddictTheme {
                 // A surface container using the 'background' color from the theme
@@ -22,7 +35,22 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    LazyColumn {
+                        item {
+                            Heading(Profile(5, 5, "James"))
+                        }
+
+                        item {
+                            Text("Checklist UI")
+                            WeeklyCheckboxes()
+                        }
+
+                        item {
+                            Text("Notification Selector")
+                        }
+                    }
+
+                    // Greeting("Android")
                 }
             }
         }
