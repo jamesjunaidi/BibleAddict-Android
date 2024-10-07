@@ -19,19 +19,24 @@ The elements are a currency count and streak count
 @Composable
 fun Heading(profile: Profile) {
     Column {
-        Box(
-            modifier = Modifier.fillMaxSize(), // Ensures the Box takes up the entire available space
-            contentAlignment = Alignment.Center // Centers the content inside the Box
-        ) {
-            Text(
-                text = "Welcome ${profile.name}!",
-                style = Styles.welcomeTextStyle,
-                textAlign = TextAlign.Center
-            )
-        }
 
+        WelcomeHeader(name = profile.name)
 
         QuantitativeSection(profile.currency, profile.streak)
+    }
+}
+
+@Composable
+fun WelcomeHeader(name: String) {
+    Box(
+        modifier = Modifier.fillMaxSize(), // Ensures the Box takes up the entire available space
+        contentAlignment = Alignment.Center // Centers the content inside the Box
+    ) {
+        Text(
+            text = "Welcome ${name}!",
+            style = Styles.welcomeTextStyle,
+            textAlign = TextAlign.Center
+        )
     }
 }
 

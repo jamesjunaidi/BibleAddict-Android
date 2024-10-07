@@ -20,6 +20,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import com.junaidi.qtdays.Models.Profile
 import com.junaidi.qtdays.maincomposables.Heading
+import com.junaidi.qtdays.maincomposables.SingleCheckbox
+import com.junaidi.qtdays.maincomposables.WeeklyCheckboxes
 import java.util.Calendar
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +42,7 @@ class MainActivity : ComponentActivity() {
 
                         item {
                             Text("Checklist UI")
-                            SingleCheckbox()
+                            WeeklyCheckboxes()
                         }
 
                         item {
@@ -52,26 +54,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun SingleCheckbox() {
-    val date: Calendar = Calendar.getInstance()
-
-    var checked by remember {
-        mutableStateOf(false)
-    }
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Text(
-            "Date ${date.get(Calendar.MONTH) + 1}/${date.get(Calendar.DAY_OF_MONTH)}"
-        )
-        Checkbox(
-            checked = checked,
-            onCheckedChange = { checked = it }
-        )
     }
 }
 
