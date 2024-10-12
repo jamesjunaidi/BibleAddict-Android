@@ -17,4 +17,8 @@ object Styles {
         fontWeight = FontWeight.Bold,
         fontSize = 30.sp
     )
+
+    val checklistTextStyle = TextStyle(
+        fontSize = 18.sp
+    )
 }
