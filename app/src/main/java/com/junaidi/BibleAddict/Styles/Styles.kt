@@ -1,4 +1,4 @@
-package com.junaidi.qtdays.Styles
+package com.junaidi.BibleAddict.Styles
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight

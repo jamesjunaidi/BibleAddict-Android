@@ -1,4 +1,4 @@
-package com.junaidi.qtdays
+package com.junaidi.BibleAddict
 
 import org.junit.Test
 

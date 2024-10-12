@@ -1,4 +1,4 @@
-package com.junaidi.qtdays.maincomposables
+package com.junaidi.BibleAddict.maincomposables
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
