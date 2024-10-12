@@ -1,7 +1,6 @@
-package com.junaidi.qtdays.maincomposables
+package com.junaidi.BibleAddict.maincomposables
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -9,8 +8,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.junaidi.qtdays.Models.Profile
-import com.junaidi.qtdays.Styles.Styles
+import com.junaidi.BibleAddict.Models.Profile
+import com.junaidi.BibleAddict.Styles.Styles
 
 /*
 This Composable function contains the logic for our header

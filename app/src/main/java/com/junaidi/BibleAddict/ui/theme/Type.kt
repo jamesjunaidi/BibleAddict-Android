@@ -1,4 +1,4 @@
-package com.junaidi.qtdays.ui.theme
+package com.junaidi.BibleAddict.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

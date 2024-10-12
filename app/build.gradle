@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.junaidi.qtdays'
+    namespace 'com.junaidi.BibleAddict'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.junaidi.qtdays"
+        applicationId "com.junaidi.BibleAddict"
         minSdk 24
         targetSdk 33
         versionCode 1
