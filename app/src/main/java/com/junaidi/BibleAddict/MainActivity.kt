@@ -33,7 +33,6 @@ class MainActivity : ComponentActivity() {
                         }
 
                         item {
-                            Text("Checklist UI")
                             WeeklyCheckboxes()
                         }
 
