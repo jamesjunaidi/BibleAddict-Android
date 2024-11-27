@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.junaidi.BibleAddict'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.junaidi.BibleAddict"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -47,17 +47,31 @@ android {
 }
 
 dependencies {
+    // Compose Libraries
+    implementation "androidx.compose.material3:material3:$material3_version" // Material3 UI Components
+    implementation "androidx.compose.ui:ui:$compose_ui_version" // Compose UI Core
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version" // Compose UI Preview Tooling
+    implementation 'androidx.compose.material:material:1.2.0' // Legacy Material Components (if needed)
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.2.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    // Kotlin Extensions
+    implementation 'androidx.core:core-ktx:1.7.0' // Kotlin Extensions for Android Core
+
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1' // Lifecycle components with Kotlin extensions
+
+    // Activity and Compose Integration
+    implementation 'androidx.activity:activity-compose:1.3.1' // Compose integration for Activity
+    implementation "androidx.compose.runtime:runtime-livedata:1.4.0"
+
+    // Testing Libraries
+    testImplementation 'junit:junit:4.13.2' // Unit Testing (JUnit)
+
+    // Android Testing Libraries
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1' // JUnit for Android Tests
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1' // Espresso for UI Testing
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version" // Compose UI Testing with JUnit4
+
+    // Debugging Tools for Compose
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version" // Compose Tooling for Debugging
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version" // Manifest for Compose Test Debugging
 }
