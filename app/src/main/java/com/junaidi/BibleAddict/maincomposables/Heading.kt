@@ -1,67 +1,86 @@
 package com.junaidi.BibleAddict.maincomposables
-
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.junaidi.BibleAddict.Models.Profile
 import com.junaidi.BibleAddict.Styles.Styles
 
 /*
-This Composable function contains the logic for our header
-The elements are a currency count and streak count
+This Composable function contains the logic for our header.
+The elements are a currency count and streak count.
  */
 @Composable
 fun Heading(profile: Profile) {
-    Column {
-
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        // Welcome Header Section
         WelcomeHeader(name = profile.name)
 
-        QuantitativeSection(profile.currency, profile.streak)
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Quantitative Section
+        QuantitativeSection(currency = profile.currency, streak = profile.streak)
     }
 }
 
 @Composable
 fun WelcomeHeader(name: String) {
     Box(
-        modifier = Modifier.fillMaxSize(), // Ensures the Box takes up the entire available space
-        contentAlignment = Alignment.Center // Centers the content inside the Box
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 16.dp),
+        contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Welcome ${name}!",
-            style = Styles.welcomeTextStyle,
+            text = "Welcome, $name!",
+            style = Styles.welcomeTextStyle.copy(fontSize = 24.sp), // Adjust font size for better visibility
             textAlign = TextAlign.Center
         )
     }
 }
 
 @Composable
-fun QuantitativeSection(currency: Int, days: Int,) {
-    LazyRow (
+fun QuantitativeSection(currency: Int, streak: Int) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFFEDEDED), // Light background color
+            contentColor = Color.Black
+        ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 3.dp, end = 3.dp, top = 3.dp, bottom = 3.dp)
+            .padding(8.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
-        item {
-            Box(
-                modifier = Modifier.fillParentMaxWidth(), // Make sure the box takes the full width
-                contentAlignment = Alignment.CenterStart // Align items to the start of the box
-            ) {
-                Text(
-                    text = "$currency Denarius",
-                    modifier = Modifier.align(Alignment.CenterStart), // Align the left item
-                    style = Styles.textStyle
-                )
-                Text(
-                    "Streak: $days days",
-                    modifier = Modifier.align(Alignment.CenterEnd), // Align the right item
-                    style = Styles.textStyle
-                )
-            }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Currency Section
+            Text(
+                text = "$currency Denarius",
+                style = Styles.textStyle.copy(fontSize = 18.sp)
+            )
+
+            // Streak Section
+            Text(
+                text = "Streak: $streak days",
+                style = Styles.textStyle.copy(fontSize = 18.sp)
+            )
         }
     }
 }
