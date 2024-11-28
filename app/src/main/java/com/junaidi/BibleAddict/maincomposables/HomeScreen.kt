@@ -1,6 +1,5 @@
 package com.junaidi.BibleAddict.maincomposables
 
-import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Surface
@@ -15,14 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.junaidi.BibleAddict.ApiCallsInterface
-import com.junaidi.BibleAddict.Models.PostExampleObject
 import com.junaidi.BibleAddict.Models.Profile
 import com.junaidi.BibleAddict.Models.ProfileViewModel
-import com.junaidi.BibleAddict.RetrofitClient
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 /**
  * Main Home Screen composable displaying user profile, weekly checkboxes,
