@@ -47,31 +47,39 @@ android {
 }
 
 dependencies {
-    // Compose Libraries
-    implementation "androidx.compose.material3:material3:$material3_version" // Material3 UI Components
-    implementation "androidx.compose.ui:ui:$compose_ui_version" // Compose UI Core
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version" // Compose UI Preview Tooling
-    implementation 'androidx.compose.material:material:1.2.0' // Legacy Material Components (if needed)
+    // === Compose Libraries ===
+    implementation "androidx.compose.material3:material3:$material3_version" // Material Design 3 components
+    implementation "androidx.compose.ui:ui:$compose_ui_version" // Core Compose UI
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version" // UI Preview support for Compose
+    implementation 'androidx.compose.material:material:1.2.0' // Legacy Material Design components (optional)
+    implementation "androidx.compose.runtime:runtime-livedata:1.4.0" // LiveData integration with Compose
 
-    // Kotlin Extensions
-    implementation 'androidx.core:core-ktx:1.7.0' // Kotlin Extensions for Android Core
+    // === Navigation ===
+    implementation "androidx.navigation:navigation-compose:2.7.2" // Jetpack Navigation for Compose
 
-    // Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1' // Lifecycle components with Kotlin extensions
+    // === Kotlin Extensions ===
+    implementation 'androidx.core:core-ktx:1.7.0' // Kotlin extensions for Android Core libraries
 
-    // Activity and Compose Integration
-    implementation 'androidx.activity:activity-compose:1.3.1' // Compose integration for Activity
-    implementation "androidx.compose.runtime:runtime-livedata:1.4.0"
+    // === Lifecycle Components ===
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1' // Lifecycle-aware components with Kotlin extensions
 
-    // Testing Libraries
-    testImplementation 'junit:junit:4.13.2' // Unit Testing (JUnit)
+    // === Activity and Compose Integration ===
+    implementation 'androidx.activity:activity-compose:1.3.1' // Integration of Compose within Activity
 
-    // Android Testing Libraries
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1' // JUnit for Android Tests
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1' // Espresso for UI Testing
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version" // Compose UI Testing with JUnit4
+    // === Networking ===
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Retrofit for REST API calls
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // Gson converter for JSON serialization/deserialization
+
+    // === Testing Libraries ===
+    testImplementation 'junit:junit:4.13.2' // Unit testing with JUnit
+
+    // Android Instrumentation Testing
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1' // Android-specific JUnit testing
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1' // UI testing with Espresso
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version" // UI testing for Compose with JUnit4
 
     // Debugging Tools for Compose
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version" // Compose Tooling for Debugging
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version" // Manifest for Compose Test Debugging
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version" // Tools for debugging Compose UI
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version" // Manifest support for Compose UI testing
 }
+
