@@ -15,7 +15,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.junaidi.BibleAddict.Models.Profile
-import com.junaidi.BibleAddict.Models.ProfileViewModel
+import com.junaidi.BibleAddict.ViewModels.ProfileViewModel
 
 /**
  * Main Home Screen composable displaying user profile, weekly checkboxes,
@@ -51,8 +51,9 @@ fun HomeScreen(profileViewModel: ProfileViewModel, navController: NavHostControl
                 MyButton(
                     onButtonClick = {
                         println("Button was clicked")
-                        profileViewModel.fetchPostById(2) { result ->
-                            println("API Result: $result")
+                        profileViewModel.fetchPost() { result ->
+                            println("API Result in Compose UI: $result")
+                            profileViewModel.updateName(result.take(6))
                         }
                     },
                     buttonName = "API Log Test Button"

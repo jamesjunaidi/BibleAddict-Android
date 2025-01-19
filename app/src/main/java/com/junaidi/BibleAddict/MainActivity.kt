@@ -9,7 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.junaidi.BibleAddict.ui.theme.BibleAddictTheme
-import com.junaidi.BibleAddict.Models.ProfileViewModel
+import com.junaidi.BibleAddict.ViewModels.ProfileViewModel
 import com.junaidi.BibleAddict.maincomposables.HomeScreen
 import com.junaidi.BibleAddict.maincomposables.NotificationPreferencesScreen
 
